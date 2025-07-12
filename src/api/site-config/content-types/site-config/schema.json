@@ -1,0 +1,84 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_config",
+  "info": {
+    "singularName": "site-config",
+    "pluralName": "site-configs",
+    "displayName": "Site Configuration",
+    "description": "General website configuration settings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "site_title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "required": true
+    },
+    "site_description": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "notification_email": {
+      "type": "email",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "maxLength": 200
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "color_theme": {
+      "type": "enumeration",
+      "required": true,
+      "default": "blue",
+      "enum": [
+        "blue",
+        "green",
+        "red",
+        "purple",
+        "orange",
+        "pink"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "city": {
+      "type": "string"
+    },
+    "mapUrl": {
+      "type": "string"
+    },
+    "navigateUrl": {
+      "type": "string"
+    }
+  }
+}

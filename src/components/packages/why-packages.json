@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_packages_why_packages",
+  "info": {
+    "displayName": "whyPackages",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title_card": {
+      "type": "string"
+    },
+    "description_card": {
+      "type": "text"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

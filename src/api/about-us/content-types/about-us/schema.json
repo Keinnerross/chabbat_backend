@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About Us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "home_about": {
+      "type": "component",
+      "component": "about.home-about",
+      "repeatable": false
+    },
+    "about_page": {
+      "type": "component",
+      "component": "about.about-page",
+      "repeatable": false
+    }
+  }
+}

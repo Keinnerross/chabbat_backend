@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_packages_hero_packages",
+  "info": {
+    "displayName": "hero_packages",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description_1": {
+      "type": "text"
+    },
+    "description_2": {
+      "type": "text"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "show_gobeyond_logo": {
+      "type": "boolean"
+    },
+    "pictures": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

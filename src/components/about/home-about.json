@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_about_home_abouts",
+  "info": {
+    "displayName": "Home About",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "primary_description": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description_1": {
+      "type": "text"
+    },
+    "description_2": {
+      "type": "text"
+    },
+    "whatsapp_group_link": {
+      "type": "string"
+    },
+    "pictures": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "item_list": {
+      "type": "component",
+      "component": "about.item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

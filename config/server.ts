@@ -4,4 +4,14 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  // Optimizaciones para desarrollo
+  webhooks: {
+    populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
+  },
+  settings: {
+    cors: {
+      enabled: true,
+      origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173'],
+    },
+  },
 });

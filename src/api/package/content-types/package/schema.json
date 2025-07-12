@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "hero",
+  "info": {
+    "singularName": "package",
+    "pluralName": "packages",
+    "displayName": "Packages",
+    "description": "Hero section configuration"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_packages": {
+      "type": "component",
+      "component": "packages.hero-packages",
+      "repeatable": false
+    },
+    "whyPackages": {
+      "type": "component",
+      "component": "packages.why-packages",
+      "repeatable": true,
+      "max": 4
+    },
+    "link_contact_packages": {
+      "type": "string"
+    }
+  }
+}

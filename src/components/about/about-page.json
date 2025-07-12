@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_about_about_pages",
+  "info": {
+    "displayName": "About Page",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title_1": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "title_2": {
+      "type": "string"
+    },
+    "long_description": {
+      "type": "text"
+    },
+    "pictures": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hotels",
+  "info": {
+    "singularName": "hotel",
+    "pluralName": "hotels",
+    "displayName": "Hotel",
+    "description": "Hotels and accommodations in Boquete"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "stars": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Hotel",
+        "Hostel",
+        "B&B",
+        "Resort",
+        "Lodge",
+        "Boutique Hotel",
+        "Eco Lodge",
+        "Apartment",
+        "Vacation Rental"
+      ],
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "website": {
+      "type": "string"
+    },
+    "imageUrls": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "distance": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

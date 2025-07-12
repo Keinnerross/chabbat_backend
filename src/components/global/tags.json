@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_global_tags",
+  "info": {
+    "displayName": "Tags",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "tag_name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

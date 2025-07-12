@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pricing_price_options",
+  "info": {
+    "displayName": "Price Option",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    }
+  },
+  "config": {}
+}

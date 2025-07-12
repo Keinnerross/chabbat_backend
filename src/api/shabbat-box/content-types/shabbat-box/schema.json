@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shabbat_boxes",
+  "info": {
+    "singularName": "shabbat-box",
+    "pluralName": "shabbat-boxes",
+    "displayName": "Shabbat Box",
+    "description": "Shabbat box categories and options for delivery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "options": {
+      "type": "component",
+      "component": "shabbat-box.option",
+      "repeatable": true,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 1
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_shabbat_box_options",
+  "info": {
+    "displayName": "Option",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "includes": {
+      "type": "json"
+    },
+    "servingSize": {
+      "type": "string"
+    },
+    "basePrice": {
+      "type": "decimal"
+    },
+    "additionalGuestPrice": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "text"
+    },
+    "details": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 0
+    },
+    "variants": {
+      "type": "component",
+      "component": "shabbat-box.variant",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

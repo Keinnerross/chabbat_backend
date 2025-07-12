@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shabbat_box_variants",
+  "info": {
+    "displayName": "Variant",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string",
+      "required": true
+    },
+    "serves": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 0
+    }
+  },
+  "config": {}
+}
