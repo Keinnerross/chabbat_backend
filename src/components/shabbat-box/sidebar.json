@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shabbat_box_sidebars",
+  "info": {
+    "displayName": "sidebar",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title_sidebar": {
+      "type": "string"
+    },
+    "description_sidebar": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

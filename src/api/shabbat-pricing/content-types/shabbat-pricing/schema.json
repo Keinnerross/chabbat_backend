@@ -4,7 +4,7 @@
   "info": {
     "singularName": "shabbat-pricing",
     "pluralName": "shabbat-pricings",
-    "displayName": "Shabbat Pricing",
+    "displayName": "Shabbat Register Pricing",
     "description": "Pricing structure for Shabbat meals and services"
   },
   "options": {

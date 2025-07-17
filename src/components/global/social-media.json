@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_global_social_medias",
+  "info": {
+    "displayName": "social_media",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "link_instagram": {
+      "type": "string"
+    },
+    "link_facebook": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

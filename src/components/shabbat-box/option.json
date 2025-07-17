@@ -11,7 +11,7 @@
       "required": true
     },
     "includes": {
-      "type": "json"
+      "type": "richtext"
     },
     "servingSize": {
       "type": "string"

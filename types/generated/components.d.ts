@@ -15,6 +15,18 @@ export interface AboutAboutPage extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutChabadTeam extends Struct.ComponentSchema {
+  collectionName: 'components_about_chabad_teams';
+  info: {
+    displayName: 'chabad_team';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    rol: Schema.Attribute.String;
+  };
+}
+
 export interface AboutHomeAbout extends Struct.ComponentSchema {
   collectionName: 'components_about_home_abouts';
   info: {
@@ -43,6 +55,42 @@ export interface AboutItem extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutSidebar extends Struct.ComponentSchema {
+  collectionName: 'components_about_sidebars';
+  info: {
+    displayName: 'sidebar';
+    icon: 'folder';
+  };
+  attributes: {
+    chabad_team: Schema.Attribute.Component<'about.chabad-team', true>;
+    description_sidebar: Schema.Attribute.Text;
+    title_sidebar: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalCopiesPage extends Struct.ComponentSchema {
+  collectionName: 'components_global_copies_pages';
+  info: {
+    displayName: 'Copies Page';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalSocialMedia extends Struct.ComponentSchema {
+  collectionName: 'components_global_social_medias';
+  info: {
+    displayName: 'social_media';
+    icon: 'star';
+  };
+  attributes: {
+    link_facebook: Schema.Attribute.String;
+    link_instagram: Schema.Attribute.String;
+  };
+}
+
 export interface GlobalTags extends Struct.ComponentSchema {
   collectionName: 'components_global_tags';
   info: {
@@ -51,6 +99,19 @@ export interface GlobalTags extends Struct.ComponentSchema {
   };
   attributes: {
     tag_name: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalVisitorInfo extends Struct.ComponentSchema {
+  collectionName: 'components_global_visitor_infos';
+  info: {
+    displayName: 'visitor Info';
+    icon: 'book';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -106,11 +167,23 @@ export interface ShabbatBoxOption extends Struct.ComponentSchema {
     basePrice: Schema.Attribute.Decimal;
     description: Schema.Attribute.Text;
     details: Schema.Attribute.String;
-    includes: Schema.Attribute.JSON;
+    includes: Schema.Attribute.RichText;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     quantity: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     servingSize: Schema.Attribute.String;
     variants: Schema.Attribute.Component<'shabbat-box.variant', true>;
+  };
+}
+
+export interface ShabbatBoxSidebar extends Struct.ComponentSchema {
+  collectionName: 'components_shabbat_box_sidebars';
+  info: {
+    displayName: 'sidebar';
+    icon: 'dashboard';
+  };
+  attributes: {
+    description_sidebar: Schema.Attribute.Text;
+    title_sidebar: Schema.Attribute.String;
   };
 }
 
@@ -128,18 +201,37 @@ export interface ShabbatBoxVariant extends Struct.ComponentSchema {
   };
 }
 
+export interface ShabbatActivity extends Struct.ComponentSchema {
+  collectionName: 'components_shabbat_activities';
+  info: {
+    description: 'Shabbat and Holiday activities with time';
+    displayName: 'Activity';
+  };
+  attributes: {
+    activity: Schema.Attribute.String & Schema.Attribute.Required;
+    hora: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.about-page': AboutAboutPage;
+      'about.chabad-team': AboutChabadTeam;
       'about.home-about': AboutHomeAbout;
       'about.item': AboutItem;
+      'about.sidebar': AboutSidebar;
+      'global.copies-page': GlobalCopiesPage;
+      'global.social-media': GlobalSocialMedia;
       'global.tags': GlobalTags;
+      'global.visitor-info': GlobalVisitorInfo;
       'packages.hero-packages': PackagesHeroPackages;
       'packages.why-packages': PackagesWhyPackages;
       'pricing.price-option': PricingPriceOption;
       'shabbat-box.option': ShabbatBoxOption;
+      'shabbat-box.sidebar': ShabbatBoxSidebar;
       'shabbat-box.variant': ShabbatBoxVariant;
+      'shabbat.activity': ShabbatActivity;
     }
   }
 }

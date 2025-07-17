@@ -396,6 +396,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sidebar: Schema.Attribute.Component<'about.sidebar', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -449,11 +450,44 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContentPageContentPage extends Struct.SingleTypeSchema {
+  collectionName: 'content_pages';
+  info: {
+    displayName: 'Copies Content Page';
+    pluralName: 'content-pages';
+    singularName: 'content-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accommodations: Schema.Attribute.Component<'global.copies-page', false>;
+    activities: Schema.Attribute.Component<'global.copies-page', false>;
+    contact_page: Schema.Attribute.Component<'global.visitor-info', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    donations: Schema.Attribute.Component<'global.copies-page', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::content-page.content-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    restaurants: Schema.Attribute.Component<'global.copies-page', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    visitor_info: Schema.Attribute.Component<'global.visitor-info', false>;
+  };
+}
+
 export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
   collectionName: 'hotels';
   info: {
     description: 'Hotels and accommodations in Boquete';
-    displayName: 'Hotel';
+    displayName: 'Hotels';
     pluralName: 'hotels';
     singularName: 'hotel';
   };
@@ -580,6 +614,76 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiShabbatAndHolidayShabbatAndHoliday
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'shabbat_and_holidays';
+  info: {
+    description: 'Shabbat and Jewish holidays calendar with activities and times';
+    displayName: 'Shabbat and Holidays';
+    pluralName: 'shabbat-and-holidays';
+    singularName: 'shabbat-and-holiday';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.String;
+    endDate: Schema.Attribute.Date & Schema.Attribute.Required;
+    fridayNight: Schema.Attribute.Component<'shabbat.activity', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shabbat-and-holiday.shabbat-and-holiday'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    shabbatDay: Schema.Attribute.Component<'shabbat.activity', true>;
+    startDate: Schema.Attribute.Date & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiShabbatBoxPageShabbatBoxPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'shabbat_box_pages';
+  info: {
+    displayName: 'ShabbatBox Page';
+    pluralName: 'shabbat-box-pages';
+    singularName: 'shabbat-box-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shabbat-box-page.shabbat-box-page'
+    > &
+      Schema.Attribute.Private;
+    picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    picture_popup: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sidebar: Schema.Attribute.Component<'shabbat-box.sidebar', false>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiShabbatBoxShabbatBox extends Struct.CollectionTypeSchema {
   collectionName: 'shabbat_boxes';
   info: {
@@ -619,7 +723,7 @@ export interface ApiShabbatPricingShabbatPricing
   collectionName: 'shabbat_pricings';
   info: {
     description: 'Pricing structure for Shabbat meals and services';
-    displayName: 'Shabbat Pricing';
+    displayName: 'Shabbat Register Pricing';
     pluralName: 'shabbat-pricings';
     singularName: 'shabbat-pricing';
   };
@@ -667,14 +771,13 @@ export interface ApiSiteConfigSiteConfig extends Struct.SingleTypeSchema {
       }>;
     city: Schema.Attribute.String;
     color_theme: Schema.Attribute.Enumeration<
-      ['blue', 'green', 'red', 'purple', 'orange', 'pink']
+      ['coral', 'blue', 'green', 'red', 'gold', 'orange']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'blue'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    favicon: Schema.Attribute.Media<'images'>;
     hero_image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -701,6 +804,7 @@ export interface ApiSiteConfigSiteConfig extends Struct.SingleTypeSchema {
         maxLength: 100;
         minLength: 1;
       }>;
+    social_media: Schema.Attribute.Component<'global.social-media', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1251,9 +1355,12 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::activity.activity': ApiActivityActivity;
+      'api::content-page.content-page': ApiContentPageContentPage;
       'api::hotel.hotel': ApiHotelHotel;
       'api::package.package': ApiPackagePackage;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
+      'api::shabbat-and-holiday.shabbat-and-holiday': ApiShabbatAndHolidayShabbatAndHoliday;
+      'api::shabbat-box-page.shabbat-box-page': ApiShabbatBoxPageShabbatBoxPage;
       'api::shabbat-box.shabbat-box': ApiShabbatBoxShabbatBox;
       'api::shabbat-pricing.shabbat-pricing': ApiShabbatPricingShabbatPricing;
       'api::site-config.site-config': ApiSiteConfigSiteConfig;

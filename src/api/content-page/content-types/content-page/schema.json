@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "content_pages",
+  "info": {
+    "singularName": "content-page",
+    "pluralName": "content-pages",
+    "displayName": "Copies Content Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "activities": {
+      "type": "component",
+      "component": "global.copies-page",
+      "repeatable": false
+    },
+    "restaurants": {
+      "type": "component",
+      "component": "global.copies-page",
+      "repeatable": false
+    },
+    "accommodations": {
+      "type": "component",
+      "component": "global.copies-page",
+      "repeatable": false
+    },
+    "visitor_info": {
+      "type": "component",
+      "component": "global.visitor-info",
+      "repeatable": false
+    },
+    "donations": {
+      "type": "component",
+      "component": "global.copies-page",
+      "repeatable": false
+    },
+    "contact_page": {
+      "type": "component",
+      "component": "global.visitor-info",
+      "repeatable": false
+    }
+  }
+}

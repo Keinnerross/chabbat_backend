@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_copies_pages",
+  "info": {
+    "displayName": "Copies Page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

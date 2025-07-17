@@ -20,6 +20,11 @@
       "type": "component",
       "component": "about.about-page",
       "repeatable": false
+    },
+    "sidebar": {
+      "type": "component",
+      "component": "about.sidebar",
+      "repeatable": false
     }
   }
 }

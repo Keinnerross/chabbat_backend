@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_about_chabad_teams",
+  "info": {
+    "displayName": "chabad_team",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rol": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

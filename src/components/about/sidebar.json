@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_sidebars",
+  "info": {
+    "displayName": "sidebar",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "title_sidebar": {
+      "type": "string"
+    },
+    "description_sidebar": {
+      "type": "text"
+    },
+    "chabad_team": {
+      "type": "component",
+      "component": "about.chabad-team",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

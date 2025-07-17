@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shabbat_activities",
+  "info": {
+    "displayName": "Activity",
+    "description": "Shabbat and Holiday activities with time"
+  },
+  "options": {},
+  "attributes": {
+    "activity": {
+      "type": "string",
+      "required": true
+    },
+    "hora": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

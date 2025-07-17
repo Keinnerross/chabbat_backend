@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shabbat_and_holidays",
+  "info": {
+    "singularName": "shabbat-and-holiday",
+    "pluralName": "shabbat-and-holidays",
+    "displayName": "Shabbat and Holidays",
+    "description": "Shabbat and Jewish holidays calendar with activities and times"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "date": {
+      "type": "string",
+      "required": false
+    },
+    "fridayNight": {
+      "type": "component",
+      "component": "shabbat.activity",
+      "repeatable": true
+    },
+    "shabbatDay": {
+      "type": "component",
+      "component": "shabbat.activity",
+      "repeatable": true
+    }
+  }
+}
