@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_customs",
+  "info": {
+    "singularName": "page-custom",
+    "pluralName": "page-customs",
+    "displayName": "Custom Pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Main navigation",
+        "Chabad house",
+        "Visiting section"
+      ]
+    },
+    "tag": {
+      "type": "string"
+    },
+    "title_page": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "main_picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "sidebar_title": {
+      "type": "string"
+    },
+    "sidebar_text_button": {
+      "type": "string"
+    },
+    "sidebar_link": {
+      "type": "string"
+    },
+    "sidebar_description": {
+      "type": "richtext"
+    }
+  }
+}

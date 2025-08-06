@@ -34,6 +34,8 @@ export interface AboutHomeAbout extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
     description_1: Schema.Attribute.Text;
     description_2: Schema.Attribute.Text;
     item_list: Schema.Attribute.Component<'about.item', true>;
@@ -79,6 +81,55 @@ export interface GlobalCopiesPage extends Struct.ComponentSchema {
   };
 }
 
+export interface GlobalDayOfTheWeek extends Struct.ComponentSchema {
+  collectionName: 'components_global_day_of_the_weeks';
+  info: {
+    displayName: 'day_of_the_week';
+    icon: 'connector';
+  };
+  attributes: {
+    all_day: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    day_name: Schema.Attribute.Boolean;
+  };
+}
+
+export interface GlobalHomeVideo extends Struct.ComponentSchema {
+  collectionName: 'components_global_home_videos';
+  info: {
+    displayName: 'home_video';
+    icon: 'file';
+  };
+  attributes: {
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    is_active: Schema.Attribute.Enumeration<['Active', 'Disabled']>;
+    title: Schema.Attribute.String;
+    video_url: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalRepeatControl extends Struct.ComponentSchema {
+  collectionName: 'components_global_repeat_controls';
+  info: {
+    displayName: 'repeat_control';
+    icon: 'connector';
+  };
+  attributes: {
+    all_day: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    date: Schema.Attribute.Date & Schema.Attribute.Required;
+    end_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    hour_end: Schema.Attribute.Time;
+    hour_start: Schema.Attribute.Time;
+    repeat_mode: Schema.Attribute.Enumeration<['once', 'range', 'weekly']> &
+      Schema.Attribute.Required;
+    start_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    weekly_repeat: Schema.Attribute.Component<'global.weekly-repeat', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface GlobalSocialMedia extends Struct.ComponentSchema {
   collectionName: 'components_global_social_medias';
   info: {
@@ -112,6 +163,73 @@ export interface GlobalVisitorInfo extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalWeeklyRepeat extends Struct.ComponentSchema {
+  collectionName: 'components_global_weekly_repeat_s';
+  info: {
+    displayName: 'weekly_repeat ';
+    icon: 'connector';
+  };
+  attributes: {
+    Friday: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    friday_all_day: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    friday_hour_end: Schema.Attribute.Time;
+    friday_hour_start: Schema.Attribute.Time;
+    Monday: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    monday_all_day: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    monday_hour_end: Schema.Attribute.Time &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'18:30:00.000'>;
+    monday_hour_start: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'10:00:00.000'>;
+    Saturday: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    saturday_all_day: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    saturday_hour_end: Schema.Attribute.Time;
+    saturday_hour_start: Schema.Attribute.Time;
+    Sunday: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    sunday_all_day: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    sunday_hour_end: Schema.Attribute.Time;
+    sunday_hour_start: Schema.Attribute.Time;
+    Thursday: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    thursday_all_day: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    thursday_hour_end: Schema.Attribute.Time;
+    thursday_hour_start: Schema.Attribute.Time;
+    Tuesday: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    tuesday_all_day: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    tuesday_hour_end: Schema.Attribute.Time;
+    tuesday_hour_start: Schema.Attribute.Time;
+    Wednesday: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    wednesday_all_day: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    wednesday_hour_end: Schema.Attribute.Time;
+    wednesday_hour_start: Schema.Attribute.Time;
   };
 }
 
@@ -196,8 +314,8 @@ export interface ShabbatBoxVariant extends Struct.ComponentSchema {
   attributes: {
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     quantity: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    serves: Schema.Attribute.String & Schema.Attribute.Required;
-    size: Schema.Attribute.String & Schema.Attribute.Required;
+    serves: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -213,6 +331,59 @@ export interface ShabbatActivity extends Struct.ComponentSchema {
   };
 }
 
+export interface ShabbatItemCustomMenu extends Struct.ComponentSchema {
+  collectionName: 'components_shabbat_item_custom_menus';
+  info: {
+    displayName: 'item_custom_menu';
+    icon: 'apps';
+  };
+  attributes: {
+    category_name: Schema.Attribute.String;
+    option: Schema.Attribute.Component<'shabbat-box.option', true>;
+  };
+}
+
+export interface ShabbatRegisterForMealSection extends Struct.ComponentSchema {
+  collectionName: 'components_shabbat_register_for_meal_sections';
+  info: {
+    displayName: 'register_for_meal_section';
+    icon: 'cup';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    item_included: Schema.Attribute.Component<'about.item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    title: Schema.Attribute.String;
+    title_form: Schema.Attribute.String;
+  };
+}
+
+export interface ShabbatShabbatBoxSection extends Struct.ComponentSchema {
+  collectionName: 'components_shabbat_shabbat_box_sections';
+  info: {
+    displayName: 'shabbat_box_section';
+    icon: 'cup';
+  };
+  attributes: {
+    button_text: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    tags: Schema.Attribute.Component<'global.tags', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -222,9 +393,13 @@ declare module '@strapi/strapi' {
       'about.item': AboutItem;
       'about.sidebar': AboutSidebar;
       'global.copies-page': GlobalCopiesPage;
+      'global.day-of-the-week': GlobalDayOfTheWeek;
+      'global.home-video': GlobalHomeVideo;
+      'global.repeat-control': GlobalRepeatControl;
       'global.social-media': GlobalSocialMedia;
       'global.tags': GlobalTags;
       'global.visitor-info': GlobalVisitorInfo;
+      'global.weekly-repeat': GlobalWeeklyRepeat;
       'packages.hero-packages': PackagesHeroPackages;
       'packages.why-packages': PackagesWhyPackages;
       'pricing.price-option': PricingPriceOption;
@@ -232,6 +407,9 @@ declare module '@strapi/strapi' {
       'shabbat-box.sidebar': ShabbatBoxSidebar;
       'shabbat-box.variant': ShabbatBoxVariant;
       'shabbat.activity': ShabbatActivity;
+      'shabbat.item-custom-menu': ShabbatItemCustomMenu;
+      'shabbat.register-for-meal-section': ShabbatRegisterForMealSection;
+      'shabbat.shabbat-box-section': ShabbatShabbatBoxSection;
     }
   }
 }

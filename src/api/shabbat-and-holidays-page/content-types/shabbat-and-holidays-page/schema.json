@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "shabbat_and_holidays_pages",
+  "info": {
+    "singularName": "shabbat-and-holidays-page",
+    "pluralName": "shabbat-and-holidays-pages",
+    "displayName": "Shabbat and Holidays Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_main": {
+      "type": "string"
+    },
+    "description_main": {
+      "type": "string"
+    },
+    "show_nearest_event": {
+      "type": "boolean"
+    },
+    "register_for_meal_section": {
+      "type": "component",
+      "component": "shabbat.register-for-meal-section",
+      "repeatable": false
+    },
+    "title_secundary": {
+      "type": "string"
+    },
+    "description_secundary": {
+      "type": "string"
+    },
+    "shabbat_box_section": {
+      "type": "component",
+      "component": "shabbat.shabbat-box-section",
+      "repeatable": false
+    }
+  }
+}

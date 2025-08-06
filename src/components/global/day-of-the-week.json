@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_day_of_the_weeks",
+  "info": {
+    "displayName": "day_of_the_week",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "day_name": {
+      "type": "boolean"
+    },
+    "all_day": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "config": {}
+}

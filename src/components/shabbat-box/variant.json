@@ -6,13 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "size": {
+    "title": {
       "type": "string",
       "required": true
     },
     "serves": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "price": {
       "type": "decimal",

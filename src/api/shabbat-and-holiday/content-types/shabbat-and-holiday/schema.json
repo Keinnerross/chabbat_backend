@@ -4,7 +4,7 @@
   "info": {
     "singularName": "shabbat-and-holiday",
     "pluralName": "shabbat-and-holidays",
-    "displayName": "Shabbat and Holidays",
+    "displayName": "Sessions & Events (Shabbat & Holidays)",
     "description": "Shabbat and Jewish holidays calendar with activities and times"
   },
   "options": {
@@ -16,26 +16,124 @@
       "type": "string",
       "required": true
     },
+    "cover_picture": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type_of_event"
+            },
+            "custom"
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "event_description": {
+      "type": "richtext"
+    },
     "startDate": {
       "type": "date",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "type_of_event"
+            },
+            "custom"
+          ]
+        }
+      },
       "required": true
     },
     "endDate": {
       "type": "date",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "type_of_event"
+            },
+            "custom"
+          ]
+        }
+      },
       "required": true
     },
-    "date": {
-      "type": "string",
-      "required": false
+    "repeat_control": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type_of_event"
+            },
+            "custom"
+          ]
+        }
+      },
+      "component": "global.repeat-control",
+      "repeatable": false
     },
     "fridayNight": {
       "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type_of_event"
+            },
+            "shabbat or holiday"
+          ]
+        }
+      },
       "component": "shabbat.activity",
       "repeatable": true
     },
     "shabbatDay": {
       "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type_of_event"
+            },
+            "shabbat or holiday"
+          ]
+        }
+      },
       "component": "shabbat.activity",
+      "repeatable": true
+    },
+    "type_of_event": {
+      "type": "enumeration",
+      "required": true,
+      "default": "shabbat or holiday",
+      "enum": [
+        "shabbat or holiday",
+        "custom"
+      ]
+    },
+    "category_menu": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type_of_event"
+            },
+            "custom"
+          ]
+        }
+      },
+      "component": "shabbat.item-custom-menu",
       "repeatable": true
     }
   }

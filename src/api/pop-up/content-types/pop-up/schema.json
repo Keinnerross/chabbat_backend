@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pop_ups",
+  "info": {
+    "singularName": "pop-up",
+    "pluralName": "pop-ups",
+    "displayName": "popUp"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "location": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "shabbat-holidays",
+        "disabled",
+        "more options coming soon"
+      ]
+    }
+  }
+}

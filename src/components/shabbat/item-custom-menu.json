@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shabbat_item_custom_menus",
+  "info": {
+    "displayName": "item_custom_menu",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "category_name": {
+      "type": "string"
+    },
+    "option": {
+      "type": "component",
+      "component": "shabbat-box.option",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

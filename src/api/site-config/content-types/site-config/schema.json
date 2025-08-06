@@ -40,7 +40,7 @@
     },
     "phone": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "color_theme": {
       "type": "enumeration",
@@ -48,7 +48,9 @@
       "default": "blue",
       "enum": [
         "coral",
+        "teal",
         "blue",
+        "turquoise",
         "green",
         "red",
         "gold",

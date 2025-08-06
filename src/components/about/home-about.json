@@ -33,6 +33,12 @@
       "type": "component",
       "component": "about.item",
       "repeatable": true
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
     }
   },
   "config": {}

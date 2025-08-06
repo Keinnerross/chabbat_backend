@@ -1,0 +1,118 @@
+{
+  "collectionName": "components_global_repeat_controls",
+  "info": {
+    "displayName": "repeat_control",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "repeat_mode": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "once",
+        "range",
+        "weekly"
+      ]
+    },
+    "date": {
+      "type": "date",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "repeat_mode"
+            },
+            "once"
+          ]
+        }
+      },
+      "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "repeat_mode"
+            },
+            "range"
+          ]
+        }
+      },
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "repeat_mode"
+            },
+            "range"
+          ]
+        }
+      },
+      "required": true
+    },
+    "weekly_repeat": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "repeat_mode"
+            },
+            "weekly"
+          ]
+        }
+      },
+      "component": "global.weekly-repeat",
+      "repeatable": false,
+      "required": true
+    },
+    "all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "repeat_mode"
+            },
+            "weekly"
+          ]
+        }
+      },
+      "default": true
+    },
+    "hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "all_day"
+            },
+            false
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

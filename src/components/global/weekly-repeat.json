@@ -1,0 +1,335 @@
+{
+  "collectionName": "components_global_weekly_repeat_s",
+  "info": {
+    "displayName": "weekly_repeat ",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "Monday": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "monday_all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "Monday"
+            },
+            true
+          ]
+        }
+      },
+      "default": true
+    },
+    "monday_hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "monday_all_day"
+            },
+            false
+          ]
+        }
+      },
+      "default": "10:00:00.000"
+    },
+    "monday_hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "monday_all_day"
+            },
+            false
+          ]
+        }
+      },
+      "required": true,
+      "default": "18:30:00.000"
+    },
+    "Tuesday": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "tuesday_all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "Tuesday"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "tuesday_hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "tuesday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "tuesday_hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "tuesday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "Wednesday": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "wednesday_all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "Wednesday"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "wednesday_hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "wednesday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "wednesday_hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "wednesday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "Thursday": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "thursday_all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "Thursday"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "thursday_hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "thursday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "thursday_hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "thursday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "Friday": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "friday_all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "Friday"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "friday_hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "friday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "friday_hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "friday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "Saturday": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "saturday_all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "Saturday"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "saturday_hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "saturday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "saturday_hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "saturday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "Sunday": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "sunday_all_day": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "Sunday"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "sunday_hour_start": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "sunday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "sunday_hour_end": {
+      "type": "time",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "sunday_all_day"
+            },
+            false
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

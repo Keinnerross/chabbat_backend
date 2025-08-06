@@ -4,13 +4,18 @@
   "info": {
     "singularName": "content-page",
     "pluralName": "content-pages",
-    "displayName": "Copies Content Page"
+    "displayName": "Content Page Sections"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+    "home_video": {
+      "type": "component",
+      "component": "global.home-video",
+      "repeatable": false
+    },
     "activities": {
       "type": "component",
       "component": "global.copies-page",

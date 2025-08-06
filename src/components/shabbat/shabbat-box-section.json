@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shabbat_shabbat_box_sections",
+  "info": {
+    "displayName": "shabbat_box_section",
+    "icon": "cup"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "component",
+      "component": "global.tags",
+      "repeatable": true,
+      "max": 3
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
