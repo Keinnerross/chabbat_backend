@@ -484,6 +484,43 @@ export interface ApiContentPageContentPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDonationDonation extends Struct.CollectionTypeSchema {
+  collectionName: 'donations';
+  info: {
+    displayName: 'donation';
+    pluralName: 'donations';
+    singularName: 'donation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    customMonths: Schema.Attribute.Integer;
+    donationId: Schema.Attribute.String;
+    donationStatus: Schema.Attribute.Enumeration<
+      ['pending', 'completed', 'failed', 'cancelled']
+    >;
+    donationType: Schema.Attribute.String;
+    donorEmail: Schema.Attribute.String;
+    isDonationCustom: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::donation.donation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subscriptionId: Schema.Attribute.String;
+    totalAmount: Schema.Attribute.Decimal;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
   collectionName: 'hotels';
   info: {
@@ -534,6 +571,49 @@ export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     website: Schema.Attribute.String;
+  };
+}
+
+export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
+  collectionName: 'orders';
+  info: {
+    description: 'Order management for reservations, shabbat boxes, and donations';
+    displayName: 'Orders';
+    pluralName: 'orders';
+    singularName: 'order';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    customerEmail: Schema.Attribute.Email & Schema.Attribute.Required;
+    customerName: Schema.Attribute.String & Schema.Attribute.Required;
+    customerNationality: Schema.Attribute.String;
+    customerPhone: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
+      Schema.Attribute.Private;
+    orderDescription: Schema.Attribute.Text;
+    orderId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    orderStatus: Schema.Attribute.Enumeration<
+      ['pending', 'paid', 'cancelled', 'failed', 'refunded']
+    >;
+    orderType: Schema.Attribute.Enumeration<
+      ['shabbat or holiday', 'reservation custom', 'shabbatBox']
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    serviceDate: Schema.Attribute.String;
+    stripeSessionId: Schema.Attribute.String;
+    totalAmount: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1485,7 +1565,9 @@ declare module '@strapi/strapi' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::activity.activity': ApiActivityActivity;
       'api::content-page.content-page': ApiContentPageContentPage;
+      'api::donation.donation': ApiDonationDonation;
       'api::hotel.hotel': ApiHotelHotel;
+      'api::order.order': ApiOrderOrder;
       'api::package.package': ApiPackagePackage;
       'api::page-custom.page-custom': ApiPageCustomPageCustom;
       'api::pop-up.pop-up': ApiPopUpPopUp;

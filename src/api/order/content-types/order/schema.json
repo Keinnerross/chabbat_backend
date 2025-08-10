@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Orders",
+    "description": "Order management for reservations, shabbat boxes, and donations"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "orderType": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "shabbat or holiday",
+        "reservation custom",
+        "shabbatBox"
+      ]
+    },
+    "totalAmount": {
+      "type": "decimal",
+      "required": true
+    },
+    "stripeSessionId": {
+      "type": "string"
+    },
+    "customerName": {
+      "type": "string",
+      "required": true
+    },
+    "customerEmail": {
+      "type": "email",
+      "required": true
+    },
+    "customerPhone": {
+      "type": "string"
+    },
+    "customerNationality": {
+      "type": "string"
+    },
+    "orderDescription": {
+      "type": "text"
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "paid",
+        "cancelled",
+        "failed",
+        "refunded"
+      ]
+    },
+    "serviceDate": {
+      "type": "string"
+    }
+  }
+}
