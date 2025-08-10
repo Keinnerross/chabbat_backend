@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_global_title_and_description_mds",
+  "info": {
+    "displayName": "title_and_description_md",
+    "icon": "cloud"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

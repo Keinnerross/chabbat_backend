@@ -153,6 +153,18 @@ export interface GlobalTags extends Struct.ComponentSchema {
   };
 }
 
+export interface GlobalTitleAndDescriptionMd extends Struct.ComponentSchema {
+  collectionName: 'components_global_title_and_description_mds';
+  info: {
+    displayName: 'title_and_description_md';
+    icon: 'cloud';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface GlobalVisitorInfo extends Struct.ComponentSchema {
   collectionName: 'components_global_visitor_infos';
   info: {
@@ -398,6 +410,7 @@ declare module '@strapi/strapi' {
       'global.repeat-control': GlobalRepeatControl;
       'global.social-media': GlobalSocialMedia;
       'global.tags': GlobalTags;
+      'global.title-and-description-md': GlobalTitleAndDescriptionMd;
       'global.visitor-info': GlobalVisitorInfo;
       'global.weekly-repeat': GlobalWeeklyRepeat;
       'packages.hero-packages': PackagesHeroPackages;

@@ -475,8 +475,16 @@ export interface ApiContentPageContentPage extends Struct.SingleTypeSchema {
       'api::content-page.content-page'
     > &
       Schema.Attribute.Private;
+    privacy_policy: Schema.Attribute.Component<
+      'global.title-and-description-md',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
     restaurants: Schema.Attribute.Component<'global.copies-page', false>;
+    terms_and_conditions: Schema.Attribute.Component<
+      'global.title-and-description-md',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

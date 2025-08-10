@@ -45,6 +45,16 @@
       "type": "component",
       "component": "global.visitor-info",
       "repeatable": false
+    },
+    "privacy_policy": {
+      "type": "component",
+      "component": "global.title-and-description-md",
+      "repeatable": false
+    },
+    "terms_and_conditions": {
+      "type": "component",
+      "component": "global.title-and-description-md",
+      "repeatable": false
     }
   }
 }
